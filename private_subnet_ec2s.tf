@@ -5,7 +5,7 @@ resource "aws_instance" "private_subnet_instances_az1" {
   subnet_id     = "${aws_subnet.private_subnet1.id}"
 
   tags = {
-      Name = "GOCD instance"
+    Name = "GOCD instance"
   }
 }
 
@@ -16,6 +16,6 @@ resource "aws_instance" "private_subnet_instances_az2" {
   subnet_id     = "${aws_subnet.private_subnet2.id}"
 
   tags = {
-      Name = "Nexus instance"
+    Name = "Nexus instance"
   }
 }

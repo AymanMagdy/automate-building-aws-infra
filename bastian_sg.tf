@@ -3,7 +3,7 @@ resource "aws_security_group" "allow_SSH_NGINX_bastian" {
   description = "Allow SSH and NGINX inbound traffic"
   vpc_id      = "${aws_vpc.terraform_iti_vpc.id}"
 
-# inbount connections for SSH.
+  # inbount connections for SSH.
   ingress {
     description = "Allow SSH to VPC."
     from_port   = 22
@@ -12,7 +12,7 @@ resource "aws_security_group" "allow_SSH_NGINX_bastian" {
     cidr_blocks = ["0.0.0.0/0"]
   }
 
-# inbount connections for Nginx.
+  # inbount connections for Nginx.
   ingress {
     description = "Allow Nginx to VPC."
     from_port   = 80
@@ -21,7 +21,7 @@ resource "aws_security_group" "allow_SSH_NGINX_bastian" {
     cidr_blocks = ["0.0.0.0/0"]
   }
 
-# outbound connections.
+  # outbound connections.
   egress {
     from_port   = 0
     to_port     = 0

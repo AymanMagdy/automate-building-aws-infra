@@ -3,7 +3,7 @@ resource "aws_security_group" "allow_SSH_Nginx_internal_inbounds" {
   description = "Allow SSH and SSH_NGINXinternal inbounds"
   vpc_id      = "${aws_vpc.terraform_iti_vpc.id}"
 
-# inbount connections for SSH.
+  # inbount connections for SSH.
   ingress {
     description = "Allow SSH to internal."
     from_port   = 22
@@ -12,7 +12,7 @@ resource "aws_security_group" "allow_SSH_Nginx_internal_inbounds" {
     cidr_blocks = ["10.0.0.0/16"]
   }
 
-# inbount connections for Nginx.
+  # inbount connections for Nginx.
   ingress {
     description = "Allow Nginx to internal."
     from_port   = 80
@@ -21,7 +21,7 @@ resource "aws_security_group" "allow_SSH_Nginx_internal_inbounds" {
     cidr_blocks = ["10.0.0.0/16"]
   }
 
-# outbound connections.
+  # outbound connections.
   egress {
     from_port   = 0
     to_port     = 0

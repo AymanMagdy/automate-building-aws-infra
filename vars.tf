@@ -1,9 +1,9 @@
 variable "AWS_REGION" {
-    default = "us-east-2"
+  default = "us-east-2"
 }
 
 variable "aws_ami_type" {
-    default = "ami-0e01ce4ee18447327"
+  default = "ami-0e01ce4ee18447327"
 }
 
 variable "instance_type" {
@@ -23,9 +23,9 @@ variable "availablilty_zone2" {
 }
 
 variable "access_key" {
-  
+
 }
 
 variable "secret_access_key" {
-  
+
 }
