@@ -21,6 +21,6 @@ resource "aws_key_pair" "aws_ec2_public_key_pair" {
 }
 
 resource "aws_secretsmanager_secret_version" "aws_ec2_private_key" {
-  secret_id     = "${aws_secretsmanager_secret.aws_secrete_manager_key.id}"
+  secret_id     = "${aws_secretsmanager_secret.aws_terraform_key.id}"
   secret_string = "${tls_private_key.aws_terraform_key.private_key_pem}"
 }
