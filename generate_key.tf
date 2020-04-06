@@ -10,8 +10,8 @@ resource "local_file" "ec2-private-key" {
 }
 
 # Create a new secrete manager.
-resource "aws_secretsmanager_secret" "aws_infra_terraform" {
-  name                    = "aws_infra_terraform"
+resource "aws_secretsmanager_secret" "aws_infra_terraform_new" {
+  name                    = "aws_infra_terraform_new"
   recovery_window_in_days = 0
 }
 
@@ -21,6 +21,6 @@ resource "aws_key_pair" "aws_terraform_key_pair" {
 }
 
 resource "aws_secretsmanager_secret_version" "aws_ec2_private_key" {
-  secret_id     = "${aws_secretsmanager_secret.aws_infra_terraform.id}"
+  secret_id     = "${aws_secretsmanager_secret.aws_infra_terraform_new.id}"
   secret_string = "${tls_private_key.aws_terraform_key.private_key_pem}"
 }
