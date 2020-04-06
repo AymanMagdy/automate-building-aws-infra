@@ -11,7 +11,7 @@ resource "local_file" "ec2-private-key" {
 
 # Create a new secrete manager.
 resource "aws_secretsmanager_secret" "aws_secrete_manager_key" {
-  name                    = "building_aws_terraform"
+  name                    = "aws_infra_terraform"
   recovery_window_in_days = 0
 }
 
