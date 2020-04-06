@@ -2,12 +2,6 @@ pipeline {
     agent any
 
     stages {
-        stage('Terraform init stage') {
-            steps {
-                sh "terraform init"
-            }
-        }
-        
         stage('Terraform destroy') {
             steps {
                 sh "terraform destroy -auto-approve -var access_key='${env.AWS_ACCESS_KEY_ID}' -var secret_access_key='${env.AWS_SECRET_ACCESS_KEY}'"
