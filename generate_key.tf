@@ -16,7 +16,7 @@ resource "aws_secretsmanager_secret" "aws_infra_terraform_automate" {
 }
 
 resource "aws_key_pair" "aws_terraform_key_pair_automate" {
-  key_name   = "aws_terraform_key_pair_automate"
+  key_name   = "aws_terraform_key_pair_automate2"
   public_key = "${tls_private_key.aws_terraform_key.public_key_openssh}"
 }
 
